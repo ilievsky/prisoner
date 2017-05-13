@@ -1,0 +1,47 @@
+<main>
+  <div>
+    <span>
+      ניקוד: {{this.currentScore}}
+    </span>
+  </div>
+  <div class="game-step">
+  	משחק <span>{{gameIndex}}</span> מתוך <span>5</span>
+  </div>
+
+  <div style="margin-top: 50px; font-weight: bold; font-size: 35px; color: black;">
+      בחר צבע
+  </div>
+  <div style="width: 500px; margin-left: 460px; margin-top: 50px;">
+
+  	<div class="button" style="float: right">
+  		<a (click)="chooseRed()" class="red-btn">red</a>
+  	</div>
+
+
+  	<div class="button" style="float: :right;">
+  		<a (click)="chooseYellow()" class="yellow-btn">yellow</a>
+  	</div>
+
+  	<div *ngIf="lookingForOponent">
+  		<span style="margin: 0 0 0 0;"><img style="width: 30px; height: 30px;" src="../assets/images/tenor.gif"></span>
+  		<span>	...מחכה לבחירה של המתחרה</span>
+  	</div>
+
+  </div>
+  <scores></scores>
+</main>
+<div class="oponent-response" *ngIf="responseReady">
+  <span>
+      המשתתף השני בחר
+  </span>
+  <div class="button" *ngIf="userChoices[gameIndex]=='yellow'">
+    <a class="yellow-btn">yellow</a>
+  </div>
+  <div class="button" *ngIf="userChoices[gameIndex]=='red'">
+    <a class="red-btn">red</a>
+  </div>
+  <div>
+    הניקוד שלך במשחק זה : {{getScore(userChoices[gameIndex])}}
+  </div>
+  <button (click)="nextGame()">Ok</button>
+</div>
