@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import '../assets/css/styles.css';	
 import {IChoices} from './interfaces/IChoices';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class GameComponent {
 	private responseReady:boolean;
 	private userChoices:{};
 
-	constructor()	{
+	constructor(private router: Router, private route: ActivatedRoute)	{
 		this.gameIndex = 1;
 		this.currentScore = 0;
 		this.responseReady = false;
@@ -41,7 +42,7 @@ export class GameComponent {
 	}
 
 	private playGame(chosen:string) {
-		if(this.gameIndex<5) {
+		if(this.gameIndex<=5) {
 			
 			this.userChoices[this.gameIndex] = chosen;
 
@@ -78,6 +79,7 @@ export class GameComponent {
 	}
 
 	private gameOver() {
-		alert('game over');
+		localStorage.setItem('score', this.currentScore.toString());
+		this.router.navigate(['/final']);
 	}
 }

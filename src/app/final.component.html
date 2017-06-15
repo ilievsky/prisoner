@@ -1,0 +1,42 @@
+<div class="welcome-text" *ngIf="saved==false">
+
+  <div>
+  	<p>
+  	סיימת את שלב א בניסוי.<br>
+  	לסיום הנך מתבקש לענות על השאלה הבאה:<br>
+  	<b>האם אתה זוכר איזו אינטראקציה עתידית צפויה לך עם המשתתף מולו שיחקת?</b><br>
+  	</p>
+   </div>
+	<div>
+		<p>
+		<input type="radio" name="interaction" value="cooperative" style="margin: 12px;"> אינטראקציה עתידית שיתופית<br>
+		<input type="radio" name="interaction" value="competetive" style="margin: 12px;"> אינטראקציה עתידית תחרותית<br>
+		<input type="radio" name="interaction" value="none" style="margin: 12px;"> לא נאמר לי כי צפויה לי אינטראקציה עתידית<br>
+		</p>
+	</div>
+	<div>
+		<div class="button" style="float: right">
+		  	<a  (click)="save()" class="btn" >שמור</a>
+		</div>
+	</div>
+
+</div>
+
+<div class="welcome-text" *ngIf="saved==true">
+
+  <div>
+  	<p>
+  	<b>סיימת את המשחק!</b><br>
+  	צברת <span>{{score}}</span> נק'.<br>
+  	<span *ngIf="opType!=3">תודה על השתתפותך בחלק זה של הניסוי.</span><br>
+  	אנא לחץ על כפתור סיום וגש אל החוקר.<br>
+  	</p>
+  </div>
+	
+	<div>
+		<div class="button" style="float: right">
+		  	<a  (click)="end()" class="btn" >!סיים משחק</a>
+		</div>
+	</div>
+
+</div>

@@ -15,6 +15,7 @@ export class WelcomeComponent {
   private opType:number;
 
 	constructor(private router: Router, private route: ActivatedRoute)	{
+    localStorage.setItem('score', null);
 	}
 
   ngOnInit() {
@@ -22,6 +23,8 @@ export class WelcomeComponent {
     // (+) converts string 'id' to a number
     .switchMap((params: Params) => params['type'])
     .subscribe((type: number) => this.opType = type);
+
+    localStorage.setItem('opType', this.opType.toString());
   }
 
 	start(): void {

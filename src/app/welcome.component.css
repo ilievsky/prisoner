@@ -5,20 +5,26 @@ main {
   margin-top: 50px;
   display: block;
 }
+.welcome-text {
+	color: black;
+	font-size: 12px;
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 p {
 	text-align: right;
 	direction: rtl;
-	font-weight: bold;
 	font-size: 2em;
 }
 .opType1 {
-	color: blue;
+	
 }
 .opType2 {
-	color: yellow;
+	
 }
 .opType3 {
-	color: red;
+	
 }
 
 .btn {
@@ -49,12 +55,13 @@ p {
 	font-size:24px;
 	font-weight:bold;
 	font-style:normal;
-	height:100px;
-	line-height:100px;
+	height:70px;
+	line-height:70px;
 	width:200px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #b23e35;
+	cursor: pointer;
 }
 .btn:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
