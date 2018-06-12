@@ -8,6 +8,8 @@ import { InstructionsComponent } from './instructions.component';
 import { WelcomeComponent} from './welcome.component';
 import { FinalComponent} from './final.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
+
 
 
 const appRoutes: Routes = [
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
   	RouterModule.forRoot(appRoutes),
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   declarations: [
     AppComponent, ScoresComponent, GameComponent, InstructionsComponent, PageNotFoundComponent, WelcomeComponent, FinalComponent

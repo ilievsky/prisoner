@@ -26,6 +26,7 @@ export class GameComponent {
 		this.currentScore = 0;
 		this.responseReady = false;
 		this.userChoices = {};
+		localStorage.setItem('choices', null);
 	}
 
 	chooseRed(): void{
@@ -37,25 +38,24 @@ export class GameComponent {
 	}
 
 	nextGame(): void{
-		this.gameIndex++;
-		this.responseReady = false;
+		if(this.gameIndex<5) {
+			this.gameIndex++;
+			this.responseReady = false;
+		}
+		else{
+			this.gameOver();
+		}
 	}
 
 	private playGame(chosen:string) {
-		if(this.gameIndex<=5) {
-			
-			this.userChoices[this.gameIndex] = chosen;
+		this.userChoices[this.gameIndex] = chosen;
+		localStorage.setItem('choices', JSON.stringify(this.userChoices));
 
-			var score = this.getScore(chosen);
+		var score = this.getScore(chosen);
 
-			this.waitForOponent(chosen, ()=>{
-				this.currentScore += score;
-			});
-
-		}
-		else {
-			this.gameOver();
-		}
+		this.waitForOponent(chosen, ()=>{
+			this.currentScore += score;
+		});
 	}
 
 	private waitForOponent(chosen:string, cb:Function) {
@@ -80,6 +80,7 @@ export class GameComponent {
 
 	private gameOver() {
 		localStorage.setItem('score', this.currentScore.toString());
+		
 		this.router.navigate(['/final']);
 	}
 }

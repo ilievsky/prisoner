@@ -1,25 +1,24 @@
 main {
-  padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin-top: 50px;
   display: block;
-  border: solid black 1px;
 }
 .oponent-response {
-	position: absolute;
-    top: 100px;
-    left: 600px;
-    border: solid 2px;
+
     width: 400px;
     height: 300px;
-    background-color: gray;
+    background-color: #61a9a9;
     padding-top: 50px;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
 }
 .game-step {
 	color: black;
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
+	width: 100%;
 }
 
 .yellow-btn {
@@ -56,13 +55,14 @@ main {
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #ded17c;
+	cursor: pointer;
 }
-.yellow-btn:hover {
+.yellow-btnn:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911) );
 	background:-moz-linear-gradient( center top, #f2ab1e 5%, #f0c911 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911');
 	background-color:#f2ab1e;
-}.yellow-btn:active {
+}.yellow-btnn:active {
 	position:relative;
 	top:1px;
 }
@@ -101,13 +101,22 @@ main {
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #b23e35;
+	cursor: pointer;
 }
-.red-btn:hover {
+.red-btnn:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
 	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
 	background-color:#ce0100;
-}.red-btn:active {
+}.red-btnn:active {
 	position:relative;
 	top:1px;
+}
+
+.modal {
+  max-height: calc(100% - 100px);
+  position: fixed;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
 }

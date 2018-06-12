@@ -1,25 +1,25 @@
 <main>
-  <div>
+  <div style="float: right; margin-right: 25%; color: green; font-size: 20px; font-weight: bold;">
     <span>
       ניקוד: {{this.currentScore}}
     </span>
   </div>
-  <div class="game-step">
+  <div class="game-step" style="float: right;">
   	משחק <span>{{gameIndex}}</span> מתוך <span>5</span>
   </div>
-
-  <div style="margin-top: 50px; font-weight: bold; font-size: 35px; color: black;">
-      בחר צבע
+  <div style="clear: both;"></div>
+  <div style="margin-top: 20px; font-weight: bold; font-size: 35px; color: black;">
+      הבחירה שלך
   </div>
   <div style="width: 500px; margin-left: 460px; margin-top: 50px;">
 
   	<div class="button" style="float: right">
-  		<a (click)="chooseRed()" class="red-btn">red</a>
+  		<a (click)="chooseRed()" class="red-btn red-btnn">red</a>
   	</div>
 
 
   	<div class="button" style="float: :right;">
-  		<a (click)="chooseYellow()" class="yellow-btn">yellow</a>
+  		<a (click)="chooseYellow()" class="yellow-btn yellow-btnn">yellow</a>
   	</div>
 
   	<div *ngIf="lookingForOponent">
@@ -28,20 +28,20 @@
   	</div>
 
   </div>
-  <scores></scores>
+  <scores style="width: 100px;"></scores>
 </main>
-<div class="oponent-response" *ngIf="responseReady">
-  <span>
-      המשתתף השני בחר
-  </span>
+<div class="oponent-response modal" *ngIf="responseReady">
+  <div style="margin-bottom: 18px;">
+      :המשתתף השני בחר
+  </div>
   <div class="button" *ngIf="userChoices[gameIndex]=='yellow'">
-    <a class="yellow-btn">yellow</a>
+    <a class="yellow-btn" style="cursor: auto;">yellow</a>
   </div>
   <div class="button" *ngIf="userChoices[gameIndex]=='red'">
-    <a class="red-btn">red</a>
+    <a class="red-btn" style="cursor: auto;">red</a>
   </div>
-  <div>
+  <div style="margin-top: 18px;">
     הניקוד שלך במשחק זה : {{getScore(userChoices[gameIndex])}}
   </div>
-  <button (click)="nextGame()">Ok</button>
+  <button (click)="nextGame()" style="width: 100px; height: 40px; margin-top: 20px;">המשך</button>
 </div>

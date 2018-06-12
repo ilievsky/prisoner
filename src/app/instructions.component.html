@@ -1,33 +1,38 @@
 <div style="text-align: right;" dir="rtl">
 
 <p class="instructions">
-  הנך עומד לשחק במשחק דילמת האסיר.<br>
-למשחק יהיו חמישה סיבובים ובהם תתחרה מול משתתף אחר שאת/ה מכירים עדיין.<br>
-המשחק הינו פשוט; מטרת המשחק היא לצבור כמה שיותר נקודות. המשחק יהיה בתורות כך שלאחר צעד שלך, תמתין <br>לתגובת המשתתף שמולך. לכל אחד מכם תינתן האפשרות לבחור בין הצבע הצהוב לצבע האדום. במהלך המשחק <br>תופיע מולך מטריצת התגמולים הבאה:<br>
- <br>
-
+הוראות:<br>
+למשחק יהיו חמישה סיבובים ובהם תתחרה מול משתתף אחר שאת/ה לא מכירים עדיין.<br>
+המשחק הינו פשוט; מטרת המשחק היא לצבור כמה שיותר נקודות.<br>
+ המשחק יהיה בתורות כך שלאחר צעד שלך, תמתין לתגובת המשתתף שמולך.<br> לכל אחד מכם תינתן האפשרות לבחור בין הצבע הצהוב לצבע האדום.<br>
+  במהלך המשחק תופיע מולך מטריצת התגמולים הבאה:<br>
 </p>
 
 <scores></scores>
 
 <span class="instructions">
-<br>
-אם ההוראות מובנות לך, הקש/י על כפתור- <br>
-<div style="text-align: right;" dir="rtl">
+<div style="float: right; margin-top: 40px; margin-left: 10px">אם ההוראות מובנות לך, הקש/י על כפתור- </div>
+<div style="text-align: right; float: right;" dir="rtl">
 	<div class="button" style="float: right">
 	  	<a  (click)="start()" class="btn" >מצא לי משתתף</a>
 	</div>
-	<div style="clear: both;"></div>
-	<div *ngIf="startClicked">
-		<span>מחפש משתתף למשחק....</span>
+	<div *ngIf="startClicked" style="float: right; margin-right: 7px; margin-top: 10px;">
+		<div>מחפש משתתף למשחק....
 		<span *ngIf="!foundOponent" style="margin: 0 0 0 0;"><img style="width: 30px; height: 30px;" src="../assets/images/tenor.gif"></span>
+		</div>
+		
+		<div *ngIf="foundOponent">משתתף נמצא, המשחק מתחיל
+					<span *ngIf="foundOponent" style="margin: 0 0 0 0;"><img style="width: 30px; height: 30px;" src="../assets/images/tenor.gif"></span>
+		</div>
 	</div>
-	<div *ngIf="foundOponent">
-  		משתתף נמצא, המשחק מתחיל
+	<div  style="float: right; margin-right: 7px;">
+  		
   	</div>
+  	<div style="clear: both;"></div>
   
 </div>
-אם ההוראות אינן ברורות לך, הרם/ הרימי יד והחוקר יבוא להסביר לך<br>
+<div style="clear: both;"></div>
 <br>
+אם ההוראות אינן ברורות לך, הרם/ הרימי יד והחוקר יבוא להסביר לך<br>
 </span>
 </div>
